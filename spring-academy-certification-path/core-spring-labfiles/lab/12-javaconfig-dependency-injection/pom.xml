@@ -17,5 +17,11 @@
             <groupId>io.spring.training.core-spring</groupId>
             <artifactId>00-rewards-common</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.spring.training.core-spring</groupId>
+            <artifactId>12-javaconfig-dependency-injection-solution</artifactId>
+            <version>5.3.23</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>
