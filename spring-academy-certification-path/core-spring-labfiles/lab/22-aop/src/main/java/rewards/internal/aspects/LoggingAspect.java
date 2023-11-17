@@ -63,18 +63,16 @@ public class LoggingAspect {
 	public Object monitor(ProceedingJoinPoint repositoryMethod) throws Throwable {
 		String name = createJoinPointTraceName(repositoryMethod);
 		Monitor monitor = monitorFactory.start(name);
-		Object returnValue = null;
 		try {
 			//  TODO-08: Add the logic to proceed with the target method invocation.
 			//  - Be sure to return the target method's return value to the caller
 			//    and delete the line below.
-			returnValue = repositoryMethod.proceed();
+			return repositoryMethod.proceed();
 		} finally {
 			monitor.stop();
 			// Do not modify this log message or the test will fail
 			logger.info(AROUND + " advice implementation - " + monitor);
 		}
-		return returnValue;
 	}
 		
 	private String createJoinPointTraceName(JoinPoint joinPoint) {
